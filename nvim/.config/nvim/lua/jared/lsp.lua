@@ -15,6 +15,8 @@ end
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+-- Setup lsp_signature
+require "lsp_signature".setup()
 
 cmp.setup({
     snippet = {
@@ -34,7 +36,9 @@ cmp.setup({
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+        ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
     },
 
     sources = {
@@ -74,8 +78,6 @@ require'lspconfig'.clangd.setup(config({
 }))
 
 require'lspconfig'.pyright.setup(config())
-
-require'lspconfig'.jedi_language_server.setup(config())
 
 require'lspconfig'.svelte.setup(config())
 

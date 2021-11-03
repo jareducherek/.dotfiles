@@ -1,6 +1,7 @@
 require("jared.telescope")
 require("jared.debugger")
 require("jared.lsp")
+require("jared.harpoon")
 
 P = function(v)
   print(vim.inspect(v))
