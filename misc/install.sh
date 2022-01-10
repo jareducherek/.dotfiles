@@ -1,13 +1,13 @@
-#!/bin/bash -e
+#!/usr/bin/bash -e
 
 # Make config directory for Neovim's init.vim
 echo '[*] Preparing Neovim config directory ...'
 mkdir -p ~/.config/nvim
 
 #Install nvm, then install node for coc
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v1.35.3/install.sh | bash
-exec $SHELL
-nvm install node
+#curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v1.35.3/install.sh | bash
+#exec $SHELL
+#nvm install node
 
 # Install nvim (and its dependencies: pip3, git), Python 3 and ctags (for tagbar)
 # if nvim installation fails, refer to: https://github.com/neovim/neovim/wiki/Installing-Neovim#linux
